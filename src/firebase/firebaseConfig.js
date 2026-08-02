@@ -13,13 +13,13 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-aut
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "evoke-app.firebaseapp.com",
-  databaseURL: "https://evoke-app-default-rtdb.firebaseio.com",
-  projectId: "evoke-app",
-  storageBucket: "evoke-app.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyC6d1YujSE3_ygMY-nQA8UscUf8_KwWZlU",
+  authDomain: "eevoke-3bdd9.firebaseapp.com",
+  databaseURL: "https://evoke-3bdd9-default-rtdb.firebaseio.com/",
+  projectId: "evoke-3bdd9",
+  storageBucket: "evoke-3bdd9.firebasestorage.app",
+  messagingSenderId: "396505663011",
+  appId: "1:396505663011:web:c9878639dd188d311b9396",
 };
 
 export const app = initializeApp(firebaseConfig);
