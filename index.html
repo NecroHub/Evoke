@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evoke — Build worlds. Play instantly.</title>
+  <meta name="description" content="Evoke is a browser-based game creation platform. Build 3D worlds in Studio, publish, and play — no downloads." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/ui/tokens.css" />
+  <link rel="stylesheet" href="/src/ui/base.css" />
+  <link rel="stylesheet" href="/src/ui/layout.css" />
+  <link rel="stylesheet" href="/src/ui/components.css" />
+  <link rel="stylesheet" href="/src/ui/studio.css" />
+  <link rel="stylesheet" href="/src/ui/transitions.css" />
+
+  <!-- Babylon.js (3D engine) -->
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <script src="https://cdn.babylonjs.com/materials/babylonjs.materials.min.js"></script>
+
+  <!-- Firebase (modular SDK) -->
+  <script type="module" src="/src/firebase/firebaseConfig.js"></script>
+</head>
+<body>
+  <!-- App shell: nav rail + topbar + routed content mount -->
+  <div id="app-root">
+
+    <aside id="nav-rail" class="glass" aria-label="Primary navigation">
+      <div class="nav-logo" aria-hidden="true">
+        <span class="logo-mark">E</span>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <!-- Populated by src/components/NavRail.js -->
+      </nav>
+      <div class="nav-footer">
+        <button id="nav-create-btn" class="btn btn-arc btn-icon" title="Create">+</button>
+      </div>
+    </aside>
+
+    <div id="app-main">
+      <header id="topbar" class="glass">
+        <div class="topbar-search">
+          <input id="global-search" type="text" placeholder="Search games, creators, tags…" autocomplete="off" />
+        </div>
+        <div class="topbar-actions">
+          <button id="auth-btn" class="btn btn-ghost">Log in</button>
+          <div id="user-menu" class="user-menu hidden">
+            <img id="user-avatar" class="avatar avatar-sm" alt="" />
+          </div>
+        </div>
+      </header>
+
+      <main id="view-outlet" aria-live="polite">
+        <!-- Router injects page content here: Home, Discover, Studio, MyGames, Profile, Settings -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Auth modal mount -->
+  <div id="modal-root"></div>
+
+  <!-- App entry point -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
